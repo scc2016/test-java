@@ -1,0 +1,4 @@
+Netty测试：hellonetty
+观察者模式：observer
+回调函数：callback
+异步回调函数：threadcallback
