@@ -17,7 +17,7 @@ public class ReadPassword {
 		String name = "";
 		boolean showAll = true;
 
-		String key = "";
+		String key = "8kn9t08kn9t08kn9t01234";
 
 		File file = new File("D:\\password.txt");
 		if (file.exists()) {

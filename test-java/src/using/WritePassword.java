@@ -16,7 +16,7 @@ import java.util.Map;
 public class WritePassword {
 	public static void main(String[] args) throws Exception {
 		Password password = new Password();
-		String usePlace = "苏宁易购";
+		String usePlace = "github";
 		password.setUrl("");
 		password.setName("");
 		String passw = "";

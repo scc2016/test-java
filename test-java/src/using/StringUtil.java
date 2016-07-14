@@ -1,10 +1,22 @@
-public class HelloScc {
+package using;
 
-	public static void main(String[] args) {
-		String s1 = "杭州b                     ";
-		String s2 = "苏宁易购                  ";
-		System.out.println(length(s1) + "  " + length(s2));
+public class StringUtil {
+	public static String addUOfLength(String str, int length) {
+		if (str == null || str.isEmpty()) {
+			return addU(length);
+		} else if (length(str) >= length) {
+			return str;
+		} else {
+			return str + addU(length - length(str));
+		}
+	}
 
+	public static String addU(int length) {
+		String blank = "";
+		for (int i = 0; i < length; i++) {
+			blank = blank + "_";
+		}
+		return blank;
 	}
 
 	/**

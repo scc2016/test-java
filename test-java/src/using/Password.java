@@ -56,8 +56,8 @@ public class Password implements Serializable {
 	}
 
 	public void printPasswordInfo(String key) throws Exception {
-		System.out.println("【usePlace】:" + this.usePlace + " 【URL】:" + this.url + " 【name】:" + this.name
+		System.out.println("【usePlace】:" + StringUtil.addUOfLength(this.usePlace, 10) + " 【URL】:"
+				+ StringUtil.addUOfLength(this.url, 15) + " 【name】:" + StringUtil.addUOfLength(this.name, 25)
 				+ " 【password】:" + this.queryPassword(key));
 	}
-
 }
