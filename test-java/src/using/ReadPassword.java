@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 
@@ -17,7 +18,10 @@ public class ReadPassword {
 		String name = "";
 		boolean showAll = true;
 
-		String key = "";
+		Scanner scanner = new Scanner(System.in);// 创建输入流扫描器
+		System.out.println("请输入key：");
+		String key = scanner.nextLine();// 获取用户输入的一行文本
+		// 打印对输入文本的描述
 
 		File file = new File("D:\\password.txt");
 		if (file.exists()) {

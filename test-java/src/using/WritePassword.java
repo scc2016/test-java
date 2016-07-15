@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 
@@ -16,14 +17,26 @@ import java.util.Map;
 public class WritePassword {
 	public static void main(String[] args) throws Exception {
 		Password password = new Password();
-		String usePlace = "";
-		password.setUrl("");
-		password.setName("");
-		String passw = "";
 
-		String key = "";
+		Scanner scanner = new Scanner(System.in);// 创建输入流扫描器
+		System.out.println("请输入key：");
+		String key = scanner.nextLine();// 获取用户输入的一行文本
+
+		System.out.println("请输入usePlace：");
+		String usePlace = scanner.nextLine();// 获取用户输入的一行文本
+
+		System.out.println("请输入url：");
+		String url = scanner.nextLine();// 获取用户输入的一行文本
+
+		System.out.println("请输入name：");
+		String name = scanner.nextLine();// 获取用户输入的一行文本
+
+		System.out.println("请输入password：");
+		String passw = scanner.nextLine();// 获取用户输入的一行文本
 
 		password.setUsePlace(usePlace);
+		password.setUrl(url);
+		password.setName(name);
 		password.encryPassword(passw, key);
 
 		File file = new File("D:\\password.txt");
@@ -46,6 +59,7 @@ public class WritePassword {
 			oos.flush();
 			oos.close();
 			fos.close();
+			System.out.println(usePlace + "存储成功！");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
