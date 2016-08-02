@@ -1,7 +1,11 @@
 package using;
 
 import java.io.Serializable;
-
+/**
+ * model密码存储类
+ * @author chaos
+ *
+ */
 public class Password implements Serializable {
 	private String usePlace;
 	private String url;

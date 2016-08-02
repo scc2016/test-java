@@ -8,7 +8,11 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
-
+/**
+ * AES加密算法
+ * @author chaos
+ *
+ */
 public class AESSecurityUtil {
 	/** 密钥算法 */
 	private static final String KEY_ALGORITHM = "AES";

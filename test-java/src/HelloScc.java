@@ -1,18 +1,25 @@
-import java.util.Scanner;
+import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
 
 public class HelloScc {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		Map map = new TreeMap<String, String>();
+		map.get(null);
 
-		Scanner scanner = new Scanner(System.in);// 创建输入流扫描器
-		System.out.println("请输入数字：");// 提示用户输入
-		String line = scanner.nextLine();// 获取用户输入的一行文本
-		// 打印对输入文本的描述
-		System.out.println("原来是" + line.length() + "位数字的啊");
-		System.out.println("请输入数字：");// 提示用户输入
-		line = scanner.nextLine();// 获取用户输入的一行文本
-		// 打印对输入文本的描述
-		System.out.println("原来是" + line.length() + "位数字的啊");
+		Iterator<Entry<String, String>> it = map.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<String, String> entry = it.next();
+			it.remove();
+		}
+		if (map.containsKey("sss")) {
+			System.out.println("sss");
+		} else {
+			map.get("sss");
+			System.out.println("111");
+		}
 	}
-
 }

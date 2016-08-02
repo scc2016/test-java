@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * 
+ * 读取密码
+ * @author chaos
+ *
  */
 public class ReadPassword {
 	public static void main(String[] args) {
