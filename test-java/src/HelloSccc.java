@@ -11,6 +11,9 @@ public class HelloSccc {
 		System.out.println(a+"   "+b);
 		
 		
+		
+		
+		
 	}
 	
 	public static void addd(int x){
