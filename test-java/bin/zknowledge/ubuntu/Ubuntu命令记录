@@ -1,0 +1,10 @@
+cd   /   ~    ..
+pwd
+ls
+rm -r
+ps aux|grep sss
+
+远程查看tomcat的控制台 
+进入tomcat/logs/文件夹下 
+键入指令：tail -f catalina.out 
+就可以查看控制台了

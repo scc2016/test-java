@@ -1,0 +1,50 @@
+title:spring 获取自定义配置文件properties中参数
+url:http://blog.csdn.net/lifuxiangcaohui/article/details/46427939
+
+中config属性文件的读取与使用 PropertyPlaceholderConfigurer 注解@Component
+1.配置文件：/WEB-INF/configInfo.properties
+配置文件内容：
+email.host = www.94gleaner.com
+email.port = xxx
+email.username = gleaner
+email.password = xxx
+email.sendFrom = 94gleaner@94gleaner.com
+
+2.Spring容器启动时，使用内置bean对属性文件信息进行加载，在bean.xml中添加如下：
+<!– spring的属性加载器，加载properties文件中的属性 –>
+<bean id=”propertyConfigurer” class=”org.springframework.beans.factory.config.PropertyPlaceholderConfigurer”>
+<property name=”location”>
+<value>/WEB-INF/configInfo.properties</value>
+</property>
+<property name=”fileEncoding” value=”utf-8″ />
+</bean>
+
+3.其它bean中引用,例：
+<property name=”host”>
+<value>${email.host}</value>
+</property>
+<property name=”port”>
+<value>${email.port}</value>
+</property>
+
+4.Java代码中获取方法：创建ConfigInfo.java
+@Component(“configInfo”)
+public class ConfigInfo {
+@Value(“${email.host}”)
+private String host;
+@Value(“${email.port}”)
+private String port;
+public String getHost() {
+return host;
+}
+public String getPort() {
+return port;
+}
+}
+
+5.代码中调用处
+@Autowired
+private ConfigInfo configInfo;
+public byte[] Test(HttpServletResponse response) {
+string host = configInfo.getHost();
+}
