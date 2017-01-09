@@ -118,11 +118,14 @@ public class AESSecurityUtil {
 
 	public static void main(String[] args) throws Exception {
 		String key = "VxDksHQiTvQt9MMPtMVXdA==";
-		String jimm = "111233333345tttt";
+		String jimm = "111233333345tttt1234567890123";
+		System.out.println(key.length());
 		String mw = AESSecurityUtil.encrypt(jimm, key);
 		System.out.println("密文:" + mw);
+		System.out.println("密文长度:" + mw.length());
 
 		String jm = AESSecurityUtil.decrypt(mw, key);
 		System.out.println("明文:" + jm);
+		System.out.println("明文长度:" + jm.length());
 	}
 }

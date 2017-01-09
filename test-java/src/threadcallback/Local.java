@@ -29,6 +29,8 @@ public class Local implements CallBack, Runnable {
 		thread.start();
 		/** 当前线程继续执行 **/
 		System.out.println("Message has been sent by Local~!");
+		/** 打印发送消息的线程名称 **/
+		System.out.println(Thread.currentThread().getName());
 	}
 
 	/**
